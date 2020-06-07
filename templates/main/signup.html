@@ -1,0 +1,104 @@
+<!--
+Author: 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <title></title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content=" " />
+    <!-- //Meta tag Keywords -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" /><!-- Style-CSS -->
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"><!-- font-awesome-icons -->
+</head>
+
+<body>
+    <section class="signin-form">
+        <div class="overlay">
+            <div class="wrapper">
+                <div class="logo text-center top-bottom-gap">
+                    <a class="brand-logo" href="index.html">PDA Signup Form</a>
+                    <!-- if logo is image enable this   
+			<a class="brand-logo" href="#index.html">
+			    <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+			</a> -->
+                </div>
+                <div class="form34">
+                    <h4 class="form-head">Signup now</h4>
+                    <p class="form-para"></p>
+                    <div class="main-div">
+                    <!--    <a href="#facebook">
+                            <div class="signin facebook">
+                                <span class="fa fa-facebook" aria-hidden="true"></span>
+                                <p class="action">facebook</p>
+                            </div>
+                        </a>
+                        <a href="#google-plus">
+                            <div class="signin google-plus">
+                                <span class="fa fa-google-plus" aria-hidden="true"></span>
+                                <p class="action">google</p>
+                            </div>
+                        </a>-->
+                    </div>
+                    <div class="form-34or">
+                        <span class="pros">
+                            <span>Password Delay Intelligence Algorithm</span>
+                        </span>
+                    </div>
+                    <form action="{% url 'main:signup' %}" method="post">
+                        {% csrf_token %}
+                        <div class="">
+                            <p style="color: red; font-size: 1rem;">{{ warning }}</p>
+                        </div>
+                        <div class="">
+                            <p class="text-head">First Name</p>
+                            <input type="text" name="first_name" id="id_first_name" class="input" placeholder="Enter full name here" required="" />
+                        </div>
+                        <div class="">
+                            <p class="text-head">Last Name</p>
+                            <input type="text" name="last_name" id="id_last_name" class="input" placeholder="Enter full name here" required="" />
+                        </div>
+                        <div class="">
+                            <p class="text-head">Email Address</p>
+                            <input type="email" name="email" id="id_email" class="input" placeholder="Enter email" required="" />
+                        </div>
+                        
+                        <div class="">
+                            <p class="text-head">Username</p>
+                            <input type="text" name="username" id="id_username" class="input" placeholder="" required="" />
+                        </div>
+                        <div class="">
+                            <p class="text-head">Password</p>
+                            <input type="password" name="password" id="id_password" class="input" placeholder="" required="" />
+                        </div>
+                        <div class="">
+                            <p class="text-head">Confirm Password</p>
+                            <input type="password" name="confirm_password" id="id_confirm_password" class="input" placeholder="" required="" />
+                        </div>
+<!--
+                        <label class="remember">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>Remember me
+                        </label>
+-->
+                        <button type="submit" class="signinbutton btn" style="color:#ffffff;">Create Account</button>
+                    </form>
+                    <p class="signup" >I already have an account <a href="{% url 'main:signin' %}" class="signuplink">Sign in</a></p>
+                </div>
+            </div>
+            <!-- copyright -->
+		<div class="copyright text-center">
+                <p>© 2019  signup Form . All rights reserved | </p>
+            </div>
+            <!-- //copyright --> 
+        </div>
+    </section>
+</body>
+
+</html>

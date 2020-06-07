@@ -1,0 +1,100 @@
+<!--
+Author: 
+
+-->
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    {% load static %}
+    <title></title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content=" " />
+    <!-- //Meta tag Keywords -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" /><!-- Style-CSS -->
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"><!-- font-awesome-icons -->
+</head>
+
+<body>
+    <section class="signin-form">
+        <div class="overlay">
+            <div class="wrapper">
+
+                <div class="mainbody">
+                    <h4 class="form-head" align="center">Enter the password you wish to secure</h4>
+                    <p class="form-para"></p>
+                    <div class="main-div">
+       
+                    </div>
+                    <div class="form-34or">
+                        <span class="pros">
+                            <span>Password Delay Intelligence Algorithm</span>
+                        </span>
+                    </div>
+                    <form action="{% url 'main:main' %}" method="post">
+                        {% csrf_token %}
+                        <div class="">
+                            <p style="color: red; font-size: 1rem;">{{ warning }}</p>
+                        </div>
+                        <div class="">
+                            <p class="text-head">Password</p>
+                            <input type="password" name="password" id="id_password" class="input" placeholder="" required="" />
+                        </div>
+
+                        <div class="">
+                            <p class="text-head">Secured Digit Password</p>
+                            <input type="password" name="digit" id="id_digit" class="input" placeholder="" required="" />
+                        </div>
+
+                        <div class="">
+                            <p class="text-head">Confirm Secured Digit Password</p>
+                            <input type="password" name="confirm_digit" id="id_confirm_digit" class="input" placeholder="" required="" />
+                        </div>
+                        <div class="delaybox">
+                            <p class="text-head" align="center">Set Delay</p>
+                            <div class="inline">
+                            <select name="start" id="id_start">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                              </select> 
+                            </div>
+                            <div class="inline">
+                                <select name="end" id="id_end">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>                                  
+                                </select> 
+                            </div>
+                        </div>
+                        <button type="submit" class="signinbutton btn">Secure Digit</button>
+                    </form>
+                </div>
+            </div>
+            <!-- copyright -->
+		<div class="copyright text-center">
+                <p>© 2019  PDA . All rights reserved | </p>
+            </div>
+            <!-- //copyright --> 
+        </div>
+    </section>
+</body>
+
+</html>

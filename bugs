@@ -1,0 +1,1 @@
+when you create a custom validator in a previous project in ubuntu 18.04, the validator is appended to the list of validators that are automatically called for that same type of field in another django project.
