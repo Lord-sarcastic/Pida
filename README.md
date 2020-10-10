@@ -1,2 +1,2 @@
 # Pida
-An implementation of forms in Django. 
+An implementation of a form
